@@ -33,7 +33,7 @@ export default function OrderBook() {
 
   return (
     <div className="bg-[#0e1117] text-gray-200 rounded-xl shadow-lg p-5 font-mono">
-      {/* Header */}
+      {}
       <div className="flex items-center justify-between mb-4">
         <div className="font-semibold text-lg text-green-400">Bids</div>
         <div className="text-center">
@@ -49,7 +49,7 @@ export default function OrderBook() {
         <div className="font-semibold text-lg text-red-400">Asks</div>
       </div>
 
-      {/* Order Book Grid */}
+      {}
       <div className="grid grid-cols-2 gap-6">
         {/* Bids */}
         <div className="space-y-1">
@@ -67,7 +67,7 @@ export default function OrderBook() {
                 <div className="w-20 text-right">{formatNumber(r.qty)}</div>
                 <div className="w-20 text-right font-semibold">{formatNumber(r.total)}</div>
 
-                {/* Depth background */}
+                {}
                 <div
                   className="absolute left-0 top-0 bottom-0 rounded-l transition-all"
                   style={{
@@ -81,7 +81,7 @@ export default function OrderBook() {
           })}
         </div>
 
-        {/* Asks */}
+        {}
         <div className="space-y-1">
           {asks.slice(0, 20).map((r) => {
             const selected = selectedPrice === r.price;
@@ -97,7 +97,7 @@ export default function OrderBook() {
                 <div className="w-20 text-right">{formatNumber(r.qty)}</div>
                 <div className="w-20 text-right font-semibold">{formatNumber(r.total)}</div>
 
-                {/* Depth background */}
+                {}
                 <div
                   className="absolute right-0 top-0 bottom-0 rounded-r transition-all"
                   style={{
@@ -112,7 +112,7 @@ export default function OrderBook() {
         </div>
       </div>
 
-      {/* Selected Price Footer */}
+      {}
       {selectedPrice && (
         <div className="mt-4 text-center text-sm text-yellow-400">
           Selected Price: <span className="font-bold">{formatNumber(selectedPrice)}</span>
