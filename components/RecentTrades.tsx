@@ -33,7 +33,7 @@ export default function RecentTrades() {
               transition={{ type: 'spring', stiffness: 300 }}
               className="flex justify-between items-center px-3 py-2 rounded-xl bg-gray-50/40 dark:bg-gray-800/40 hover:bg-gray-100 dark:hover:bg-gray-800/70 transition-colors"
             >
-              {/* Price */}
+              {}
               <div
                 className={`w-28 font-semibold flex items-center gap-2 ${
                   t.isBuyerMaker ? 'text-red-600' : 'text-green-600'
@@ -47,12 +47,12 @@ export default function RecentTrades() {
                 {formatNumber(t.price)}
               </div>
 
-              {/* Quantity */}
+              {}
               <div className="w-20 text-right font-medium text-gray-800 dark:text-gray-200">
                 {formatNumber(t.qty)}
               </div>
 
-              {/* Timestamp */}
+              {}
               <div className="text-xs text-gray-500 dark:text-gray-400 w-24 text-right">
                 {new Date(t.timestamp).toLocaleTimeString()}
               </div>
