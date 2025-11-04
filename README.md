@@ -54,4 +54,15 @@ The primary objectives of this project were to:
 ---
 
 ## Folder Structure
+/src
+  /app
+    page.tsx               # Main landing page
+  /components
+    OrderBook.tsx          # Displays real-time bid/ask data
+    RecentTrades.tsx       # Displays live trade feed
+  /store
+    orderBookStore.ts      # Zustand store for managing live data
+  /utils
+    format.ts              # Number formatting utilities
+
 
