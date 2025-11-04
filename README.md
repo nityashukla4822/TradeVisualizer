@@ -95,16 +95,6 @@ trade-visualizer/
 ├── tsconfig.json
 └── tailwind.config.js
 ```
-Getting Started
-1. Clone the Repository
-git clone https://github.com/your-username/TradeVisualizer.git
-cd TradeVisualizer
-2. Install Dependencies
-npm install
-3. Run the Development Server
-npm run dev
-
-
 Key Learnings -> 
 
 Handling real-time WebSocket data streams efficiently in React.
