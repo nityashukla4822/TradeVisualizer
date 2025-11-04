@@ -19,7 +19,7 @@ export default function Page() {
       className="min-h-screen w-full bg-gray-900 text-gray-100 font-sans flex flex-col"
     >
       <div className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full bg-transparent">
-        {/* Page Header */}
+        {}
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -39,19 +39,19 @@ export default function Page() {
           </div>
         </motion.div>
 
-        {/* Grid Layout */}
+        {}
         <motion.div
           initial={{ y: 15, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
           className="grid grid-cols-1 lg:grid-cols-3 gap-6"
         >
-          {/* Order Book */}
+          {}
           <div className="lg:col-span-2 bg-gray-800/90 rounded-2xl shadow-lg p-4 border border-gray-700">
             <OrderBook />
           </div>
 
-          {/* Recent Trades */}
+          {}
           <div className="lg:col-span-1 bg-gray-800/90 rounded-2xl shadow-lg p-4 border border-gray-700">
             <RecentTrades />
           </div>
