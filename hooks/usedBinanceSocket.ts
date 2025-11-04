@@ -1,4 +1,3 @@
-// hooks/useBinanceSocket.ts
 import { useEffect, useRef } from 'react';
 import useOrderBookStore from '../store/orderBookStore';
 import type { Trade } from '../store/orderBookStore';
@@ -21,8 +20,6 @@ export function useBinanceSocket(symbol = 'btcusdt') {
 
     let ws = new WebSocket(wsUrl);
     wsRef.current = ws;
-
-    // When messages arrive, the payload is { stream, data }
     ws.onmessage = (ev) => {
       try {
         const payload = JSON.parse(ev.data);
@@ -31,7 +28,6 @@ export function useBinanceSocket(symbol = 'btcusdt') {
           depthQueue.current.push(data);
           if (snapshotRef.current) applyDepthQueue();
         } else if (stream && stream.endsWith('@aggTrade')) {
-          // agg trade: p=price, q=quantity, T=timestamp, m=isBuyerMaker
           const t: Trade = {
             price: parseFloat(data.p),
             qty: parseFloat(data.q),
@@ -46,12 +42,10 @@ export function useBinanceSocket(symbol = 'btcusdt') {
     };
 
     ws.onopen = () => {
-      // fetch REST snapshot once connected
       fetchSnapshot();
     };
 
     ws.onclose = () => {
-      // try to reconnect after short delay
       setTimeout(() => useBinanceSocket(symbol), 1000);
     };
 
@@ -74,8 +68,7 @@ export function useBinanceSocket(symbol = 'btcusdt') {
       const snapId = snapshotRef.current?.lastUpdateId ?? 0;
       while (depthQueue.current.length) {
         const ev = depthQueue.current.shift();
-        // ev.U = first updateId in event, ev.u = last updateId in event
-        if (ev.u <= snapId) continue; // already in snapshot
+        if (ev.u <= snapId) continue; 
         for (const [p, q] of ev.b) {
           applyDelta('bids', p, parseFloat(q));
         }
@@ -87,7 +80,7 @@ export function useBinanceSocket(symbol = 'btcusdt') {
     }
 
     return () => {
-      try { ws.close(); } catch (e) {/* ignore */ }
+      try { ws.close(); } catch (e) { }
       wsRef.current = null;
     };
   }, [symbol, setSnapshot, applyDelta, pushTrade]);
