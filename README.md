@@ -54,15 +54,35 @@ The primary objectives of this project were to:
 ---
 
 ## Folder Structure
-/src
-  /app
-    page.tsx               # Main landing page
-  /components
-    OrderBook.tsx          # Displays real-time bid/ask data
-    RecentTrades.tsx       # Displays live trade feed
-  /store
-    orderBookStore.ts      # Zustand store for managing live data
-  /utils
-    format.ts              # Number formatting utilities
-
+trade-visualizer/
+│
+├── public/
+│ ├── favicon.ico
+│ └── vercel.svg
+│
+├── src/
+│ ├── app/
+│ │ ├── globals.css # Global Tailwind styles
+│ │ ├── layout.tsx # Root layout for Next.js
+│ │ └── page.tsx # Main page component
+│ │
+│ ├── components/
+│ │ ├── OrderBook.tsx # Displays real-time bids/asks with depth visualization
+│ │ ├── RecentTrades.tsx # Displays recent trades in real time
+│ │ └── Spread.tsx # Shows current bid-ask spread
+│ │
+│ ├── hooks/
+│ │ └── useBinanceSocket.ts # Custom hook for WebSocket connection and message handling
+│ │
+│ ├── store/
+│ │ └── orderBookStore.ts # Zustand store for maintaining global state
+│ │
+│ └── utils/
+│ └── format.ts # Utility for formatting numbers and prices
+│
+├── .gitignore
+├── package.json
+├── README.md
+├── tsconfig.json
+└── tailwind.config.js
 
