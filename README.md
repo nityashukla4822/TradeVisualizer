@@ -94,7 +94,7 @@ trade-visualizer/
 ├── README.md
 ├── tsconfig.json
 └── tailwind.config.js
-
+```
 Getting Started
 1. Clone the Repository
 git clone https://github.com/your-username/TradeVisualizer.git
