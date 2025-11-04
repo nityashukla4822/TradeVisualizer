@@ -78,7 +78,7 @@ trade-visualizer/
 │   ├── components/
 │   │   ├── OrderBook.tsx         # Displays real-time bids/asks with depth visualization
 │   │   ├── RecentTrades.tsx      # Displays recent trades in real time
-│   │   └── Spread.tsx            # Shows current bid-ask spread
+│   │            
 │   │
 │   ├── hooks/
 │   │   └── useBinanceSocket.ts   # Custom hook for WebSocket connection and message handling
